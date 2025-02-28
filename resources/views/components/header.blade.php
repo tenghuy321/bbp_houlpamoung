@@ -62,15 +62,26 @@
                 <span class="ml-2">7:30am - 8:30pm Mon - Sun</span>
             </div>
 
-            <div class="relative">
+            <div>
                 <button id="toggle_lang_btn" class="language-select block w-full text-[12px] text-[#fff] bg-[#580B0C] py-2 px-4 rounded focus:outline-none focus:ring-0">
-                    {{ app()->getLocale() == 'en' ? 'English' : 'ភាសាខ្មែរ' }}
+                    <span class="flex items-center space-x-2">
+                        <img src="{{ asset(app()->getLocale() == 'en' ? 'assets/images/en_flag.png' : 'assets/images/kh_flag.png') }}" alt="" class="w-6">
+                        <span>{{ app()->getLocale() == 'en' ? 'English' : 'ភាសាខ្មែរ' }}</span>
+                    </span>
                 </button>
-                <div id="lang_dropdown" class="absolute top-10 left-0 w-20 bg-[#580B0C] hidden rounded-sm z-20">
-                    <a href="{{ route('lang.switch', 'en') }}" class="block py-2 px-4 text-[12px] text-[#fff] rounded-t-sm hover:bg-[#D3AD92]">English</a>
-                    <a href="{{ route('lang.switch', 'kh') }}" class="block py-2 px-4 text-[12px] text-[#fff] rounded-b-sm hover:bg-[#D3AD92]">ភាសាខ្មែរ</a>
+
+                <div id="lang_dropdown" class="absolute top-12 right-1 lg:right-0 w-36 bg-[#580B0C] hidden rounded-sm z-[300]">
+                    <a href="{{ route('lang.switch', 'en') }}" class="flex items-center space-x-2 py-2 pl-2 text-[12px] text-[#fff] rounded-t-sm hover:bg-[#D3AD92]">
+                        <img src="{{ asset('assets/images/en_flag.png') }}" alt="English" class="w-6">
+                        <p>English</p>
+                    </a>
+                    <a href="{{ route('lang.switch', 'kh') }}" class="flex items-center space-x-2 py-2 pl-2 text-[12px] text-[#fff] rounded-b-sm hover:bg-[#D3AD92]">
+                        <img src="{{ asset('assets/images/kh_flag.png') }}" alt="Khmer" class="w-6">
+                        <p>ភាសាខ្មែរ</p>
+                    </a>
                 </div>
             </div>
+
 
             <button class="lg:hidden" type="button" data-drawer-target="drawer-right-example"
                 data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example">

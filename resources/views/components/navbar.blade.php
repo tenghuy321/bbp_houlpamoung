@@ -18,7 +18,7 @@
             </a>
         </div>
 
-        <div class="absolute -bottom-[29px] flex items-center justify-center z-40">
+        <div class="absolute -bottom-[33px] flex items-center justify-center z-40">
             <img src="{{ asset('assets/images/nav.png') }}" alt="" class="">
         </div>
 
